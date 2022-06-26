@@ -214,6 +214,50 @@ $searchTitle: #fff;
 	}
 }
 .layer {
+	&-collapse {
+		&__toggle {
+			cursor: pointer;
+			display: block;
+			width: 18px;
+			height: 18px;
+			background-color: rgba(0, 0, 0, 0.5);
+			font-size: 0;
+			border-radius: 4px;
+			position: relative;
+			&:before {
+				content: "";
+				width: 10px;
+				height: 2px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: #fff;
+			}
+			&:after {
+				content: "";
+				width: 2px;
+				height: 10px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: #fff;
+			}
+			&.on {
+				&:after {
+					content: none;
+				}
+			}
+		}
+		&__content {
+			height: 0;
+			overflow: hidden;
+			&.on {
+				height: auto;
+			}
+		}
+	}
 	&-box {
 		// height: 100%;
 		// max-height: calc(100% - 51px);

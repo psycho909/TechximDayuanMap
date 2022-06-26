@@ -64,6 +64,16 @@ $(".layer-checkbox__input").on("change", function () {
 	var check = $(this).prop("checked");
 });
 
+// 雨水下水道圖資/道路纜線圖資 展開按鈕
+$(".layer-collapse__toggle").on("click", function () {
+	var collapse = $(this).attr("data-collapse");
+	$(this).toggleClass("on");
+	if ($(".layer-collapse__content[data-collapse='" + collapse + "']").hasClass("on")) {
+		$(".layer-collapse__content[data-collapse='" + collapse + "']").removeClass("on");
+	} else {
+		$(".layer-collapse__content[data-collapse='" + collapse + "']").addClass("on");
+	}
+});
 // 雨水下水道圖資切換全部
 $(".rain-checkbox__all").on("change", function () {
 	var check = $(this).prop("checked");
