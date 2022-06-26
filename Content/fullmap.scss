@@ -18,6 +18,7 @@
 	}
 }
 $bg: rgba(0, 0, 0, 0.7);
+$tabBg: rgba(#292b33, 1);
 $tabFz: #fff;
 $subTabFz: #fce563;
 $subTabFzActive: #fff;
@@ -87,7 +88,7 @@ $searchTitle: #fff;
 	top: 66px;
 	right: 10px;
 	z-index: 99;
-	// background-color: rgba(0, 0, 0, 0.7);
+	background-color: $bg;
 	min-width: 320px;
 	font-size: 14px;
 	border-radius: 8px;
@@ -114,10 +115,9 @@ $searchTitle: #fff;
 	}
 	&-tab {
 		list-style: none;
-		// background-color: #292b33;
+		background-color: $tabBg;
 		color: $tabFz;
 		font-size: 0;
-		background-color: $bg;
 		&__li {
 			display: inline-block;
 			padding: 8px 16px;
@@ -144,7 +144,7 @@ $searchTitle: #fff;
 	&-content {
 		position: relative;
 		height: 100%;
-		background-color: $bg;
+		// background-color: $bg;
 		@media screen and (min-width: 768px) and (max-height: 700px) {
 			max-height: calc(100% - 51px);
 		}
