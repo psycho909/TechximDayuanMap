@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link href="./vendors/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./Content/fullmap.css" />
+		<script src="./vendors/isMobile.min.js"></script>
+		<script src="https://lshydraulic.com/TechximDayuan/vendors/jquery/dist/jquery.min.js"></script>
+		<script src="./vendors/jquery.mCustomScrollbar.concat.min.js"></script>
+	</head>
+	<body>
+		<div class="map-wrap">
+			<!-- 操作系統開關 -->
+			<div class="control-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<!-- 操作系統 -->
+			<div class="control layer">
+				<ul class="control-tab">
+					<li class="control-tab__li control-tab__layer active" data-content="layer">圖層</li>
+					<li class="control-tab__li control-tab__search" data-content="search">空間查詢</li>
+				</ul>
+				<div class="control-content">
+					<!-- 圖層內容 -->
+					<div class="content-box layer-box on" data-content="layer">
+						<!-- 圖層類型 -->
+						<ul class="tab-ul">
+							<li class="layer-li tab-li active" data-layer="basic">基本圖層</li>
+							<li class="layer-li tab-li" data-layer="drain">其他排水</li>
+							<li class="layer-li tab-li" data-layer="cable">纜線調查</li>
+							<!-- <li class="layer-li tab-li" data-layer="">雨水下水道</li>
+							<li class="layer-li tab-li" data-layer="">淹水調查</li>
+							<li class="layer-li tab-li" data-layer="">道路調查</li> -->
+						</ul>
+						<!-- 基本圖層 -->
+						<div class="content-box__inner layer-content on" data-layer="basic">
+							<div class="layer-row">
+								<div class="layer-col"></div>
+								<div class="layer-col">開啟</div>
+								<div class="layer-col">圖例</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">大園區區界</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="大園區區界" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--border red"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">大園村理界</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="大園村理界" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--border purple"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">河川圖資</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="河川圖資" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line orange"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">公告區域排水圖資</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="公告區域排水圖資" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line dark-green"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">非公告區域排水圖資</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="非公告區域排水圖資" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line green"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">都市計畫區圖層</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="都市計畫區圖層" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--border gray"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">集水分區圖資</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="集水分區圖資" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--border blue"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">農田排水路</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="農田排水路" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line orange"></span>
+								</div>
+							</div>
+						</div>
+						<!-- 其他排水 -->
+						<div class="content-box__inner layer-content" data-layer="drain">
+							<div class="layer-row">
+								<div class="layer-col"></div>
+								<div class="layer-col">開啟</div>
+								<div class="layer-col">圖例</div>
+							</div>
+							<div class="layer-row">
+								<div class="layer-col">其他排水</div>
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<div class="layer-col">
+									<span class="layer-style layer-style--line blue"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<div class="layer-col">呈現檢查結果</div>
+							</div>
+							<div class="layer-row">
+								<div class="layer-col pl">正常</div>
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="正常" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<div class="layer-col">
+									<span class="layer-style layer-style--circle green"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<div class="layer-col pl">計畫改善</div>
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="計畫改善" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<div class="layer-col">
+									<span class="layer-style layer-style--circle blue"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<div class="layer-col pl">注意改善</div>
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="注意改善" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<div class="layer-col">
+									<span class="layer-style layer-style--circle yellow"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<div class="layer-col pl">立即改善</div>
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="立即改善" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<div class="layer-col">
+									<span class="layer-style layer-style--circle red"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<div class="layer-col pl">改善後正常</div>
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input" data-title="改善後正常" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<div class="layer-col">
+									<span class="layer-style layer-style--circle gray"></span>
+								</div>
+							</div>
+						</div>
+						<!-- 纜線調查 -->
+						<div class="content-box__inner layer-content" data-layer="cable">
+							<div class="layer-row">
+								<div class="layer-col"></div>
+								<div class="layer-col">開啟</div>
+								<div class="layer-col">圖例</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">雨水下水道圖資</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input rain-checkbox__all" data-title="雨水下水道圖資" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">北桃園</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input rain-checkbox" data-title="雨水下水道圖資-北桃園" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line red"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">北健</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input rain-checkbox" data-title="雨水下水道圖資-北健" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line blue"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">台灣固網</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input rain-checkbox" data-title="雨水下水道圖資-台灣固網" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line orange"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">亞光</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input rain-checkbox" data-title="雨水下水道圖資-亞光" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line green"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">佳光</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input rain-checkbox" data-title="雨水下水道圖資-佳光" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line purple"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">新世紀</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input rain-checkbox" data-title="雨水下水道圖資-新世紀" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line gray"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col">道路纜線圖資</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input road-checkbox__all" data-title="道路纜線圖資" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">北桃園</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input road-checkbox" data-title="道路纜線圖資-北桃園" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line red"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">北健</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input road-checkbox" data-title="道路纜線圖資-北健" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line blue"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">台灣固網</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input road-checkbox" data-title="道路纜線圖資-台灣固網" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line orange"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">亞光</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input road-checkbox" data-title="道路纜線圖資-亞光" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line green"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">佳光</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input road-checkbox" data-title="道路纜線圖資-佳光" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line purple"></span>
+								</div>
+							</div>
+							<div class="layer-row">
+								<!-- 圖層標題 -->
+								<div class="layer-col pl">新世紀</div>
+								<!-- 圖層開關 -->
+								<div class="layer-col">
+									<label class="layer-checkbox__label">
+										<input type="checkbox" class="layer-checkbox__input road-checkbox" data-title="道路纜線圖資-新世紀" />
+										<span class="layer-checkbox__style"></span>
+									</label>
+								</div>
+								<!-- 圖層圖例 -->
+								<div class="layer-col">
+									<span class="layer-style layer-style--line gray"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 空間查詢內容 -->
+					<div class="content-box search-box" data-content="search">
+						<ul class="tab-ul">
+							<li class="search-li tab-li active" data-search="manhole">人孔管線</li>
+							<li class="search-li tab-li" data-search="road">道路</li>
+							<li class="search-li tab-li" data-search="watershed">集水區</li>
+							<li class="search-li tab-li" data-search="drain">其他排水</li>
+							<li class="search-li tab-li" data-search="coordinate">座標</li>
+							<li class="search-li tab-li" data-search="city">都市計畫區</li>
+						</ul>
+						<!-- 人孔管線 -->
+						<div class="content-box__inner search-content on" data-search="manhole">
+							<div class="search-row">
+								<div class="search-title">人孔編號</div>
+								<input type="text" id="manhole" class="search-input" data-search="manhole" />
+							</div>
+							<div class="search-row">
+								<div class="search-title">管線編號</div>
+								<input type="text" id="pipeline" class="search-input" data-search="pipeline" />
+							</div>
+							<button type="button" class="search-btn">搜尋</button>
+						</div>
+						<!-- 道路 -->
+						<div class="content-box__inner search-content" data-search="road">
+							<div class="search-row">
+								<div class="search-title">村里名稱</div>
+								<input type="text" id="village" class="search-input" data-search="village" />
+							</div>
+							<div class="search-row">
+								<div class="search-title">道路名稱</div>
+								<input type="text" id="road" class="search-input" data-search="road" />
+							</div>
+							<button type="button" class="search-btn">搜尋</button>
+						</div>
+						<!-- 集水區 -->
+						<div class="content-box__inner search-content" data-search="watershed">
+							<div class="search-row">
+								<div class="search-title">主集水區名稱</div>
+								<input type="text" id="watershed" class="search-input" data-search="watershed" />
+							</div>
+							<div class="search-row">
+								<div class="search-title">次集水區名稱</div>
+								<input type="text" id="sub-watershed" class="search-input" data-search="sub-watershed" />
+							</div>
+							<button type="button" class="search-btn">搜尋</button>
+						</div>
+						<!-- 其他排水 -->
+						<div class="content-box__inner search-content" data-search="drain">
+							<div class="search-row">
+								<div class="search-title">其他排水區名稱</div>
+								<input type="text" id="drain" class="search-input" data-search="drain" />
+							</div>
+							<button type="button" class="search-btn">搜尋</button>
+						</div>
+						<!-- 座標 -->
+						<div class="content-box__inner search-content" data-search="coordinate">
+							<div class="search-row">
+								<div class="search-title">
+									<span>TM2_98 X:</span>
+									<span>WGS84 東經(度)</span>
+								</div>
+								<input type="text" id="coordinate-x" class="search-input" data-search="x" />
+							</div>
+							<div class="search-row">
+								<div class="search-title">
+									<span>TM2_98 Y:</span>
+									<span>WGS84 北緯(度)</span>
+								</div>
+								<input type="text" id="coordinate-y" class="search-input" data-search="y" />
+							</div>
+							<button type="button" class="search-btn">搜尋</button>
+						</div>
+						<!-- 都市計畫區 -->
+						<div class="content-box__inner search-content" data-search="city">
+							<div class="search-row">
+								<div class="search-title">都市計畫區名稱</div>
+								<input type="text" id="city" class="search-input" data-search="city" />
+							</div>
+							<button type="button" class="search-btn">搜尋</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- google map -->
+			<div id="map"></div>
+		</div>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN9bmjbWQ8eYZh9YvzBeFuEKurroVxwmw&callback=_initMap&libraries=places" async defer></script>
+		<script src="./Scripts/fullmap.js"></script>
+	</body>
+</html>
