@@ -85,6 +85,19 @@
 		border-bottom: 1px solid rgba(#ddd, 0.7);
 		&:hover {
 			background-color: rgba(#ddd, 0.5);
+			.menu-li__icon {
+				&:after {
+					content: "";
+					width: 8px;
+					height: 8px;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					border-radius: 50%;
+					background: rgba(#000, 0.7);
+				}
+			}
 		}
 		&__link {
 			color: #000;
@@ -93,14 +106,29 @@
 			font-size: 14px;
 			display: flex;
 			width: 100%;
+			align-items: center;
 		}
 		&__icon {
 			display: inline-block;
 			flex-shrink: 0;
+			width: 46px;
+			height: 26px;
+			position: relative;
+			&:before {
+				content: "";
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 50%;
+				border: 2px solid rgba(#000, 0.5);
+			}
 		}
 		&__text {
 			display: inline-block;
-			margin-left: 48px;
+			margin-left: 8px;
 			width: 100%;
 		}
 	}

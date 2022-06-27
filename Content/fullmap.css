@@ -803,6 +803,19 @@
 .menu-li:hover {
   background-color: rgba(221, 221, 221, 0.5);
 }
+.menu-li:hover .menu-li__icon:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+}
 .menu-li__link {
   color: #000;
   text-decoration: none;
@@ -812,14 +825,33 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .menu-li__icon {
   display: inline-block;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  width: 46px;
+  height: 26px;
+  position: relative;
+}
+.menu-li__icon:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
 }
 .menu-li__text {
   display: inline-block;
-  margin-left: 48px;
+  margin-left: 8px;
   width: 100%;
 }
