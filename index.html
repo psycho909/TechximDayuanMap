@@ -4,21 +4,247 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>大園區水利工程及災害防汛資訊系統</title>
 		<link href="./vendors/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="./Content/fullmap.css" />
 		<script src="./vendors/isMobile.min.js"></script>
-		<script src="https://lshydraulic.com/TechximDayuan/vendors/jquery/dist/jquery.min.js"></script>
+		<script src="./vendors/jquery/dist/jquery.min.js"></script>
 		<script src="./vendors/jquery.mCustomScrollbar.concat.min.js"></script>
 	</head>
 	<body>
-		<div class="map-wrap">
-			<!-- 操作系統開關 -->
-			<div class="control-toggle">
-				<span></span>
+		<!-- 跳窗-登入 -->
+		<div class="popup login">
+			<div class="popup-module"></div>
+			<div class="popup-wrap">
+				<a href="javascript:;" class="popup-close"></a>
+				<div class="popup-content">
+					<div class="popup-head login-head">
+						<span class="login-type">民眾</span>
+						<span class="login-title">使用者登入</span>
+					</div>
+					<div class="popup-body">
+						<div class="popup-row">
+							<label class="popup-label">
+								<span class="popup-input__title">帳號</span>
+								<input type="text" class="popup-input__control" placeholder="請輸入帳號" />
+							</label>
+						</div>
+						<div class="popup-row">
+							<label class="popup-label">
+								<span class="popup-input__title">密碼</span>
+								<input type="text" class="popup-input__control" placeholder="請輸入密碼" />
+							</label>
+						</div>
+						<div class="popup-row">
+							<label class="popup-label login-valid__group">
+								<span class="popup-input__title">驗證</span>
+								<div class="popup-valid"></div>
+								<input type="text" class="popup-input__control" placeholder="請輸入驗證碼" />
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="popup-btn__group">
+					<a href="javascript:;" class="popup-btn__item login-btn__forget">忘記密碼</a>
+					<a href="javascript:;" class="popup-btn__item login-btn__reg">註冊</a>
+					<a href="javascript:;" class="popup-btn__item login-btn__login">登入</a>
+					<a href="javascript:;" class="popup-btn__item popup-btn__cancel login-btn__cancel">取消</a>
+				</div>
+			</div>
+		</div>
+		<!-- 跳窗-忘記密碼 -->
+		<div class="popup forget">
+			<div class="popup-module"></div>
+			<div class="popup-wrap">
+				<a href="javascript:;" class="popup-close"></a>
+				<div class="popup-content">
+					<div class="popup-head forget-head">
+						<span class="forget-title">忘記密碼</span>
+					</div>
+					<div class="popup-body">
+						<div class="popup-row">
+							<label class="popup-label">
+								<span class="popup-input__title">E-mail</span>
+								<input type="email" class="popup-input__control" placeholder="請輸入email" />
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="popup-btn__group">
+					<a href="javascript:;" class="popup-btn__item forget-btn__success">確認</a>
+					<a href="javascript:;" class="popup-btn__item popup-btn__cancel forget-btn__cancel">取消</a>
+				</div>
+			</div>
+		</div>
+		<!-- 跳窗-註冊 -->
+		<div class="popup reg">
+			<div class="popup-module"></div>
+			<div class="popup-wrap">
+				<a href="javascript:;" class="popup-close"></a>
+				<div class="popup-content">
+					<div class="popup-head reg-head">
+						<span class="reg-title">帳號申請</span>
+					</div>
+					<div class="popup-body">
+						<div class="popup-row">
+							<div class="popup-col popup-col--5">
+								<label class="popup-label">
+									<span class="popup-input__title">帳號</span>
+									<input type="text" class="popup-input__control" placeholder="請輸入帳號" />
+								</label>
+							</div>
+							<div class="popup-col popup-col--5">
+								<label class="popup-label">
+									<span class="popup-input__title">密碼</span>
+									<input type="text" class="popup-input__control" placeholder="請輸入密碼" />
+								</label>
+							</div>
+						</div>
+						<div class="popup-row">
+							<div class="popup-col popup-col--5">
+								<label class="popup-label">
+									<span class="popup-input__title">公司名稱</span>
+									<input type="text" class="popup-input__control" placeholder="請輸入公司名稱" />
+								</label>
+							</div>
+							<div class="popup-col popup-col--5">
+								<label class="popup-label">
+									<span class="popup-input__title">申請單位</span>
+									<select class="popup-select">
+										<option class="popup-option" value="-1">輸入申請單位</option>
+									</select>
+								</label>
+							</div>
+						</div>
+						<div class="popup-row">
+							<div class="popup-col popup-col--5">
+								<label class="popup-label">
+									<span class="popup-input__title">電子郵件</span>
+									<input type="email" class="popup-input__control" placeholder="請輸入電子郵件" />
+								</label>
+							</div>
+							<div class="popup-col popup-col--5">
+								<label class="popup-label">
+									<span class="popup-input__title">電話</span>
+									<input type="text" class="popup-input__control" placeholder="請輸入電話" />
+								</label>
+							</div>
+						</div>
+						<div class="popup-row">
+							<div class="popup-col popup-col--5">
+								<label class="popup-label">
+									<span class="popup-input__title">地址</span>
+									<input type="email" class="popup-input__control" placeholder="請輸入地址" />
+								</label>
+							</div>
+							<div class="popup-col popup-col--5">
+								<label class="popup-label">
+									<span class="popup-input__title">手機</span>
+									<input type="text" class="popup-input__control" placeholder="請輸入手機" />
+								</label>
+							</div>
+						</div>
+						<div class="popup-row">
+							<div class="popup-col popup-col--5">
+								<label class="popup-label">
+									<span class="popup-input__title">聯絡人</span>
+									<input type="email" class="popup-input__control" placeholder="請輸入聯絡人" />
+								</label>
+							</div>
+						</div>
+						<div class="popup-row">
+							<div class="popup-col popup-col--5">
+								<div class="popup-label align-items--start">
+									<span class="popup-input__title">業務內容</span>
+									<div class="popup-checkbox__group">
+										<label class="popup-checkbox__label">
+											<input type="checkbox" class="popup-checkbox__control" value="其他排水調查" />
+											<span>其他排水調查</span>
+										</label>
+										<label class="popup-checkbox__label">
+											<input type="checkbox" class="popup-checkbox__control" value="纜線調查" />
+											<span>纜線調查</span>
+										</label>
+										<label class="popup-checkbox__label">
+											<input type="checkbox" class="popup-checkbox__control" value="雨水下水道調查" />
+											<span>雨水下水道調查</span>
+										</label>
+										<label class="popup-checkbox__label">
+											<input type="checkbox" class="popup-checkbox__control" value="淹水調查" />
+											<span>淹水調查</span>
+										</label>
+										<label class="popup-checkbox__label">
+											<input type="checkbox" class="popup-checkbox__control" value="道路調查" />
+											<span>道路調查</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="popup-btn__group">
+					<a href="javascript:;" class="popup-btn__item reg-btn__cancel">申請</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- menu開關 -->
+		<div class="menu-open">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<!-- menu -->
+		<div class="menu show">
+			<div class="menu-close">
 				<span></span>
 				<span></span>
 			</div>
+			<div class="menu-title">
+				<span>大園區水利工程及災害防汛資訊系統</span>
+			</div>
+			<ul class="menu-ul">
+				<li class="menu-li">
+					<a href="javascript:;" class="menu-li__link login-status" data-status="login">
+						<span class="menu-li__icon"></span>
+						<span class="menu-li__text">登入</span>
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="javascript:;" class="menu-li__link map-btn__type" data-type="basic">
+						<span class="menu-li__icon"></span>
+						<span class="menu-li__text">一般地圖</span>
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="javascript:;" class="menu-li__link map-btn__type" data-type="satellite">
+						<span class="menu-li__icon"></span>
+						<span class="menu-li__text">衛星模式</span>
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="javascript:;" class="menu-li__link">
+						<span class="menu-li__icon"></span>
+						<span class="menu-li__text">使用說明</span>
+					</a>
+				</li>
+				<li class="menu-li">
+					<a href="javascript:;" class="menu-li__link">
+						<span class="menu-li__icon"></span>
+						<span class="menu-li__text">網站導覽</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 操作系統開關 -->
+		<div class="control-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="map-wrap">
+			<h1 class="web-title">大園區水利工程及災害防汛資訊系統</h1>
 			<!-- 操作系統 -->
 			<div class="control layer">
 				<ul class="control-tab">
