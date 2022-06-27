@@ -42,10 +42,6 @@
 		display: none;
 		@include media {
 			display: block;
-			top: vw(10);
-			right: vw(10);
-			padding: vw(8);
-			border-radius: vw(4);
 		}
 		span {
 			display: block;
@@ -54,9 +50,6 @@
 			height: 3px;
 			margin-bottom: 4px;
 			@include media {
-				width: vw(22);
-				height: vw(3);
-				margin-bottom: vw(4);
 			}
 			&:last-child {
 				margin-bottom: 0;
@@ -85,14 +78,11 @@
 		}
 	}
 	@include media {
-		top: vw(50);
-		right: vw(10);
 		display: none;
 		min-width: auto;
 		max-width: none;
 		width: calc(100vw - 20px);
-		font-size: vw(14);
-		border-radius: vw(8);
+		top: 56px;
 	}
 	&-tab {
 		list-style: none;
@@ -113,7 +103,6 @@
 				background-color: $bg;
 				text-shadow: 1px 1px 5px #000;
 				@include media {
-					text-shadow: 1px 1px vw(5) #000;
 				}
 			}
 		}
@@ -172,7 +161,6 @@
 		height: 100%;
 		display: none;
 		@include media {
-			padding: vw(8);
 			flex-direction: column;
 		}
 		&.on {
@@ -184,8 +172,6 @@
 			display: none;
 			flex: 1;
 			@include media {
-				min-width: vw(250);
-				padding-left: vw(8);
 			}
 			&.on {
 				display: flex;
@@ -247,7 +233,6 @@
 		display: grid;
 		grid-template-columns: 1fr 60px 60px;
 		@include media {
-			grid-template-columns: 1fr vw(60) vw(60);
 		}
 	}
 	&-col {
@@ -255,7 +240,6 @@
 		color: $fz;
 		display: flex;
 		@include media {
-			padding: vw(4) 0;
 		}
 		&:nth-child(2) {
 			text-align: center;
@@ -276,8 +260,6 @@
 			height: 18px;
 			cursor: pointer;
 			@include media {
-				width: calc(100% - vw(18));
-				height: vw(18);
 			}
 		}
 		&__input {
@@ -289,7 +271,6 @@
 						background-color: $checkBoxPointChecked;
 						transform: translateX(24px);
 						@include media {
-							transform: translateX(vw(24));
 						}
 					}
 				}
@@ -304,7 +285,6 @@
 			position: relative;
 			transition: all 0.3s;
 			@include media {
-				border-radius: vw(26);
 			}
 			&:before {
 				content: "";
@@ -319,10 +299,6 @@
 				transform: translateX(2px);
 				transition: all 0.3s;
 				@include media {
-					width: vw(16);
-					height: vw(16);
-					margin-top: vw(-8);
-					transform: translateX(vw(2));
 				}
 			}
 		}
@@ -332,27 +308,22 @@
 		height: 18px;
 		display: inline-block;
 		@include media {
-			width: calc(100% - vw(18));
-			height: vw(18);
 		}
 		&--border {
 			border: 3px solid #fff;
 			background-color: transparent !important;
 			@include media {
-				border: vw(3) solid #fff;
 			}
 		}
 		&--line {
 			height: 4px;
 			@include media {
-				height: vw(4);
 			}
 		}
 		&--circle {
 			width: 18px;
 			border-radius: 50%;
 			@include media {
-				width: vw(18);
 			}
 		}
 	}
@@ -371,7 +342,6 @@
 		color: $searchTitle;
 		padding: 4px 0;
 		@include media {
-			padding: vw(4) 0;
 		}
 		span {
 			display: block;
@@ -385,9 +355,6 @@
 		padding-left: 4px;
 		width: 100%;
 		@include media {
-			border-radius: vw(6);
-			min-height: vw(28);
-			padding-left: vw(4);
 		}
 	}
 	&-btn {
@@ -401,15 +368,12 @@
 		margin-top: auto;
 		cursor: pointer;
 		@include media {
-			border-radius: vw(6);
-			padding: vw(8) vw(24);
 		}
 	}
 }
 .pl {
 	padding-left: 28px;
 	@include media {
-		padding-left: vw(28);
 	}
 }
 

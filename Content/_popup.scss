@@ -39,6 +39,11 @@
 		position: relative;
 		margin-top: 80px;
 		margin-bottom: 80px;
+		@include media {
+			margin-top: vw(80);
+			margin-bottom: vw(80);
+			width: 90%;
+		}
 	}
 	&-close {
 		position: absolute;

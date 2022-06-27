@@ -10,10 +10,6 @@
 		border-radius: 4px;
 		cursor: pointer;
 		@include media {
-			top: vw(10);
-			left: vw(10);
-			padding: vw(8);
-			border-radius: vw(4);
 		}
 		span {
 			display: block;
@@ -22,9 +18,6 @@
 			height: 3px;
 			margin-bottom: 4px;
 			@include media {
-				width: vw(22);
-				height: vw(3);
-				margin-bottom: vw(4);
 			}
 			&:last-child {
 				margin-bottom: 0;
@@ -59,9 +52,6 @@
 			top: 50%;
 			left: 50%;
 			@include media {
-				width: vw(22);
-				height: vw(3);
-				margin-bottom: vw(4);
 			}
 			&:first-child {
 				transform: translate(-50%, -50%) rotate(45deg);

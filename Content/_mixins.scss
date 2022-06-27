@@ -9,8 +9,8 @@
 	@return (strip-unit($size) / $fontSize * $zoom * 1rem);
 }
 @function vw($size, $breakpoint: 768) {
-	// @return calc($size / $breakpoint * 100vw);
-	@return calc($size * 1px);
+	@return calc($size / $breakpoint * 100vw);
+	// @return calc($size * 1px);
 }
 @mixin media($breakpoint: 768px) {
 	@media screen and (max-width: $breakpoint) {
