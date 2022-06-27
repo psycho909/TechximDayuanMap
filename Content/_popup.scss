@@ -226,10 +226,33 @@
 			}
 		}
 	}
+	.popup-btn__group {
+		@include media {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	.popup-btn__item {
+		@include media {
+			margin: 6px !important;
+		}
+	}
 }
 
 .reg {
 	.popup-wrap {
 		max-width: 800px;
+	}
+	.popup-row {
+		@include media {
+			flex-wrap: wrap;
+			margin-bottom: 0;
+		}
+	}
+	.popup-col--5 {
+		@include media {
+			width: 100%;
+			margin-bottom: 8px;
+		}
 	}
 }
