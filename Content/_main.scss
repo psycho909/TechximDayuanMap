@@ -39,10 +39,6 @@
 		box-sizing: content-box;
 		border-radius: 4px;
 		cursor: pointer;
-		display: none;
-		@include media {
-			display: block;
-		}
 		span {
 			display: block;
 			background-color: #fff;
@@ -59,7 +55,7 @@
 }
 .control {
 	position: fixed;
-	top: 10px;
+	top: 56px;
 	right: 10px;
 	z-index: 99;
 	background-color: $bg;
@@ -82,7 +78,6 @@
 		min-width: auto;
 		max-width: none;
 		width: calc(100vw - 20px);
-		top: 56px;
 	}
 	&-tab {
 		list-style: none;
