@@ -108,8 +108,11 @@ $(".search-btn").on("click", function () {
 	// 空間查詢input的value 會變成 obj的value
 	input.each(function (i, v) {
 		obj[$(v).attr("data-search")] = $(v).val();
-		obj[$(v).attr("data-select")] = $(v).val();
 	});
+	if (select) {
+		obj[$(select).attr("data-select")] = $(select).val();
+	}
+
 	console.log(obj);
 });
 
