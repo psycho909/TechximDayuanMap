@@ -321,6 +321,11 @@
 			@include media {
 			}
 		}
+		&--dashed {
+			border-bottom: 3px dashed #fff;
+			background-color: transparent !important;
+			// background: linear-gradient(90deg, rgba(0, 153, 68, 0.5) 0, rgba(0, 153, 68, 0.5) 25%, transparent 25%, transparent 50%, rgba(0, 153, 68, 0.5) 50%, rgba(0, 153, 68, 0.5) 75%, transparent 75%, transparent);
+		}
 	}
 }
 .search {
@@ -419,6 +424,31 @@
 }
 .purple {
 	$color: purple;
+	color: $color;
+	background-color: $color;
+	border-color: $color;
+}
+
+.sky-blue {
+	$color: $skyBlue;
+	color: $color;
+	background-color: $color;
+	border-color: $color;
+}
+.blue-blue {
+	$color: $blueBlue;
+	color: $color;
+	background-color: $color;
+	border-color: $color;
+}
+.pink-purple {
+	$color: $pinkPurple;
+	color: $color;
+	background-color: $color;
+	border-color: $color;
+}
+.jungle-green {
+	$color: $blueBlue;
 	color: $color;
 	background-color: $color;
 	border-color: $color;

@@ -38,13 +38,15 @@ $(".control-tab__li").on("click", function () {
 // 圖層切換
 $(".layer-li").on("click", function () {
 	var layer = $(this).attr("data-layer");
-	$(this).siblings().removeClass("active");
-	$(this).addClass("active");
+	if (layer) {
+		$(this).siblings().removeClass("active");
+		$(this).addClass("active");
 
-	$(".layer-content[data-layer='" + layer + "']")
-		.siblings()
-		.removeClass("on");
-	$(".layer-content[data-layer='" + layer + "']").addClass("on");
+		$(".layer-content[data-layer='" + layer + "']")
+			.siblings()
+			.removeClass("on");
+		$(".layer-content[data-layer='" + layer + "']").addClass("on");
+	}
 });
 
 // 查詢切換
@@ -112,6 +114,8 @@ $(".search-btn").on("click", function () {
 // 地圖切換
 $(".map-btn__type").on("click", function () {
 	var type = $(this).attr("data-type");
+	$(".map-btn__type").not($(this)).removeClass("on");
+	$(this).addClass("on");
 	if (type == "basic") {
 		map.setMapTypeId("roadmap");
 	}
