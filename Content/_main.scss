@@ -331,6 +331,9 @@
 .search {
 	&-box {
 	}
+	&-content {
+		max-width: 260px;
+	}
 	&-row {
 		margin-bottom: 4px;
 		&:last-child {
@@ -346,6 +349,14 @@
 		span {
 			display: block;
 		}
+	}
+	&-select {
+		background-color: $inputBg;
+		border: 1px solid $inputBorder;
+		border-radius: 6px;
+		min-height: 28px;
+		padding-left: 4px;
+		width: 100%;
 	}
 	&-input {
 		background-color: $inputBg;

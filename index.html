@@ -669,22 +669,45 @@
 					<!-- 空間查詢內容 -->
 					<div class="content-box search-box" data-content="search">
 						<ul class="tab-ul">
-							<li class="search-li tab-li active" data-search="manhole">人孔管線</li>
+							<li class="search-li tab-li active" data-search="manhole">人孔</li>
+							<li class="search-li tab-li" data-search="pipeline">管線</li>
 							<li class="search-li tab-li" data-search="road">道路</li>
 							<li class="search-li tab-li" data-search="watershed">集水區</li>
-							<li class="search-li tab-li" data-search="drain">其他排水</li>
+							<li class="search-li tab-li" data-search="drain">河川排水</li>
 							<li class="search-li tab-li" data-search="coordinate">座標</li>
 							<li class="search-li tab-li" data-search="city">都市計畫區</li>
 						</ul>
-						<!-- 人孔管線 -->
+						<!-- 人孔 -->
 						<div class="content-box__inner search-content on" data-search="manhole">
 							<div class="search-row">
+								<div class="search-title">都市計畫區</div>
+								<select class="search-select" name="manhole-city" id="manhole-city" data-search="manhole-city">
+									<option value="-1">請選擇</option>
+									<option value="a">大園都市計畫</option>
+									<option value="b">大園(菓林)都市計畫</option>
+									<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
+								</select>
+							</div>
+							<div class="search-row">
 								<div class="search-title">人孔編號</div>
-								<input type="text" id="manhole" class="search-input" data-search="manhole" />
+								<input type="text" id="manhole-num" class="search-input" data-search="manhole-num" />
+							</div>
+							<button type="button" class="search-btn">搜尋</button>
+						</div>
+						<!-- 管線 -->
+						<div class="content-box__inner search-content" data-search="pipeline">
+							<div class="search-row">
+								<div class="search-title">都市計畫區</div>
+								<select class="search-select" name="pipeline-city" id="pipeline-city" data-search="pipeline-city">
+									<option value="-1">請選擇</option>
+									<option value="a">大園都市計畫</option>
+									<option value="b">大園(菓林)都市計畫</option>
+									<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
+								</select>
 							</div>
 							<div class="search-row">
 								<div class="search-title">管線編號</div>
-								<input type="text" id="pipeline" class="search-input" data-search="pipeline" />
+								<input type="text" id="pipeline-num" class="search-input" data-search="pipeline-num" />
 							</div>
 							<button type="button" class="search-btn">搜尋</button>
 						</div>
@@ -703,11 +726,11 @@
 						<!-- 集水區 -->
 						<div class="content-box__inner search-content" data-search="watershed">
 							<div class="search-row">
-								<div class="search-title">主集水區名稱</div>
+								<div class="search-title">集水區名稱</div>
 								<input type="text" id="watershed" class="search-input" data-search="watershed" />
 							</div>
 							<div class="search-row">
-								<div class="search-title">次集水區名稱</div>
+								<div class="search-title">雨水下水道集水區名稱</div>
 								<input type="text" id="sub-watershed" class="search-input" data-search="sub-watershed" />
 							</div>
 							<button type="button" class="search-btn">搜尋</button>
@@ -715,8 +738,20 @@
 						<!-- 其他排水 -->
 						<div class="content-box__inner search-content" data-search="drain">
 							<div class="search-row">
+								<div class="search-title">河川名稱</div>
+								<input type="text" id="draina" class="search-input" data-search="draina" />
+							</div>
+							<div class="search-row">
+								<div class="search-title">公告區域排水名稱</div>
+								<input type="text" id="drainb" class="search-input" data-search="drainb" />
+							</div>
+							<div class="search-row">
+								<div class="search-title">非公告區域排水名稱</div>
+								<input type="text" id="drainc" class="search-input" data-search="drainc" />
+							</div>
+							<div class="search-row">
 								<div class="search-title">其他排水區名稱</div>
-								<input type="text" id="drain" class="search-input" data-search="drain" />
+								<input type="text" id="draind" class="search-input" data-search="draind" />
 							</div>
 							<button type="button" class="search-btn">搜尋</button>
 						</div>
@@ -724,15 +759,15 @@
 						<div class="content-box__inner search-content" data-search="coordinate">
 							<div class="search-row">
 								<div class="search-title">
-									<span>TM2_98 X:</span>
-									<span>WGS84 東經(度)</span>
+									<span>TWD97_X(m):</span>
+									<span>WGS84_E(度)</span>
 								</div>
 								<input type="text" id="coordinate-x" class="search-input" data-search="x" />
 							</div>
 							<div class="search-row">
 								<div class="search-title">
-									<span>TM2_98 Y:</span>
-									<span>WGS84 北緯(度)</span>
+									<span>TWD97_Y(m):</span>
+									<span>WGS84_N(度)</span>
 								</div>
 								<input type="text" id="coordinate-y" class="search-input" data-search="y" />
 							</div>

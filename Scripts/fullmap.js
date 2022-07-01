@@ -102,11 +102,13 @@ $(".road-checkbox__all").on("change", function () {
 // 空間查詢
 $(".search-btn").on("click", function () {
 	var input = $(this).parent(".search-content").find(".search-input");
+	var select = $(this).parent(".search-content").find(".search-select");
 	var obj = {};
 	// 空間查詢input的data-search 會變成 obj的key
 	// 空間查詢input的value 會變成 obj的value
 	input.each(function (i, v) {
 		obj[$(v).attr("data-search")] = $(v).val();
+		obj[$(v).attr("data-select")] = $(v).val();
 	});
 	console.log(obj);
 });
